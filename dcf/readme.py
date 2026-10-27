@@ -1,7 +1,8 @@
-"""Generate README.md from outputs/<TICKER>_results.json.
+"""Generate README.md (short summary) and docs/DETAILS.md (full write-up) from
+outputs/<TICKER>_results.json.
 
-Every number in the README is formatted from the results file of the same run, so the README
-cannot drift from what the code produced.
+Every number in both files is formatted from the results file of the same run, so the
+documentation cannot drift from what the code produced.
 """
 from __future__ import annotations
 
@@ -24,7 +25,8 @@ def signed_pct(x, d=1):
     return f"{x * 100:+.{d}f}%"
 
 
-def write_readme(r: dict, path) -> None:
+def write_details(r: dict, path) -> None:
+    """Full method, assumptions, results and limitations (docs/DETAILS.md)."""
     t = r["ticker"]
     a = r["assumptions"]
     v = r["valuation"]
@@ -266,4 +268,108 @@ def write_readme(r: dict, path) -> None:
     L("```\n")
     L("---\n")
     L("Every number here is produced by the code in this repo.")
+    path.write_text("\n".join(lines) + "\n")
+
+
+def _requirements() -> list[tuple[str, str]]:
+    out = []
+    for line in (config.ROOT / "requirements.txt").read_text().splitlines():
+        line = line.split("#")[0].strip()
+        if "==" in line:
+            name, ver = line.split("==", 1)
+            out.append((name.strip(), ver.strip()))
+    return out
+
+
+def _test_count() -> int:
+    return sum(f.read_text().count("\ndef test_") for f in (config.ROOT / "tests").glob("test_*.py"))
+
+
+def _badge(label, msg, color):
+    esc = lambda x: x.replace("-", "--").replace(" ", "%20")
+    return f"![{label}](https://img.shields.io/badge/{esc(label)}-{esc(msg)}-{color}.svg)"
+
+
+def write_readme(r: dict, path) -> None:
+    """Short, visual-first README; the full write-up goes to docs/DETAILS.md."""
+    t = r["ticker"]
+    a = r["assumptions"]
+    v = r["valuation"]
+    price = r["price"]
+    be = r["break_even_to_market_price"]
+    reqs = dict(_requirements())
+    direction = "below" if r["implied_price_gordon"] < price else "above"
+    wb = r["workbook_check"]["abs_diff_gordon"]
+    wb_txt = ("matches Python to better than $0.000001 per share" if wb < 1e-6
+              else "matches Python to the cent" if wb < 0.005 else "does NOT match Python within a cent")
+    be_wacc = pct(be["wacc"]) if be.get("wacc") is not None else "not reachable"
+    be_margin = pct(be["ebit_margin"]) if be.get("ebit_margin") is not None else "not reachable"
+
+    badges = [
+        _badge("License", "MIT", "yellow"),
+        _badge("python", "3.14", "blue"),
+    ] + [_badge(k, reqs[k], c) for k, c in
+         [("pandas", "150458"), ("openpyxl", "217346"), ("pycel", "6a5acd"), ("yfinance", "6001d2")]
+         if k in reqs] + [_badge("tests", f"{_test_count()} passed", "brightgreen")]
+
+    lines = []
+    L = lines.append
+    L(f"# What is {t} worth? A DCF built from SEC filings\n")
+    L(f"Is {r['company']} worth its {usd(price)} share price ({r['valuation_date']})? A five-year "
+      f"unlevered DCF says **{usd(r['implied_price_gordon'])}** (Gordon growth) to "
+      f"**{usd(r['implied_price_exit'])}** (peer exit multiple), about "
+      f"{pct(abs(r['upside_gordon']), 1)} {direction} the market.\n")
+    L(" ".join(badges) + "\n")
+    L("<table>\n<tr>")
+    L(f'<td width="50%"><img src="figures/{t}_football_field.png" alt="Football field: valuation '
+      f'ranges vs share price"></td>')
+    L(f'<td width="50%"><img src="figures/{t}_sensitivity.png" alt="WACC x terminal growth '
+      f'sensitivity"></td>')
+    L("</tr>\n</table>\n")
+    L("## Results\n")
+    L(f"From [`outputs/{t}_results.json`](outputs/{t}_results.json); the live-formula Excel model "
+      f"is [`outputs/{t}_dcf.xlsx`](outputs/{t}_dcf.xlsx).\n")
+    L("| Metric | Value |")
+    L("|---|---|")
+    L(f"| Value per share: Gordon growth / exit multiple | {usd(r['implied_price_gordon'])} / "
+      f"{usd(r['implied_price_exit'])} |")
+    L(f"| vs share price {usd(price)} | {signed_pct(r['upside_gordon'])} / "
+      f"{signed_pct(r['upside_exit'])} |")
+    L(f"| WACC (beta {r['beta']:.3f}) | {pct(r['wacc'])} |")
+    L(f"| WACC or EBIT margin needed to justify the price | {be_wacc} or {be_margin} "
+      f"(model: {pct(r['wacc'])}, {pct(a['ebit_margin'])}) |")
+    L(f"| Terminal value share of EV | {pct(v['tv_share_of_ev_gordon'], 1)} |")
+    L("")
+    L("## Proof\n")
+    L(f"- **{_test_count()} tests** (`pytest`): WACC/CAPM, beta regression, discounting and stub "
+      f"periods, both terminal values, equity bridge, XBRL parsing, and workbook-vs-Python checks.")
+    L(f"- **Independent recalculation:** every run recomputes the Excel workbook with pycel; it "
+      f"{wb_txt}.")
+    L("- **One command:** `make` runs the model and the tests in a few seconds from cached data.")
+    L("- **Data:** [SEC EDGAR XBRL companyfacts](https://www.sec.gov/edgar/sec-api-documentation), "
+      "[FRED DGS10](https://fred.stlouisfed.org/series/DGS10), "
+      "[Damodaran ERP and ratings](https://pages.stern.nyu.edu/~adamodar/), "
+      "Yahoo Finance via `yfinance`.")
+    L("- **Deterministic:** all downloads are cached under `data/`, so reruns reproduce every number; "
+      "`--refresh` pulls new data.")
+    L("")
+    L("## Stack\n")
+    L("Python 3.14 · " + " · ".join(f"{k} {ver}" for k, ver in reqs.items()) + "\n")
+    L("## Run\n")
+    L("```bash")
+    L("python3 -m venv .venv && .venv/bin/pip install -r requirements.txt")
+    L(f".venv/bin/python -m dcf run {t} --readme && .venv/bin/python -m pytest")
+    L("```\n")
+    L("## Structure\n")
+    L("```")
+    L("dcf/data.py, financials.py   downloads + cache; XBRL facts -> history and balance sheet")
+    L("dcf/core.py, pipeline.py     valuation math; assumptions, beta, comps, sensitivities")
+    L("dcf/excel.py, verify.py      live-formula workbook; independent pycel recalculation")
+    L("dcf/figures.py, readme.py    charts; README and docs/DETAILS.md from results")
+    L("tests/                       core math, XBRL parsing, workbook checks")
+    L(f"outputs/                     {t}_dcf.xlsx, {t}_results.json")
+    L("```\n")
+    L("---\n")
+    L("Full method, limitations and interview-level detail: [docs/DETAILS.md](docs/DETAILS.md) · "
+      "MIT License")
     path.write_text("\n".join(lines) + "\n")

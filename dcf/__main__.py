@@ -3,7 +3,7 @@
     python -m dcf run TJX                      # uses cached data in data/ when present
     python -m dcf run TJX --refresh            # re-download everything
     python -m dcf run BSX --peers MDT,ABT,SYK  # any SEC-registered ticker
-    python -m dcf run TJX --readme             # also regenerate README.md from the results
+    python -m dcf run TJX --readme             # also regenerate README.md and docs/DETAILS.md
 """
 from __future__ import annotations
 
@@ -67,9 +67,11 @@ def run(args) -> int:
     (out / f"{ticker}_results.json").write_text(json.dumps(res, indent=2, default=_jsonable))
     print("[5/5] Results")
     if args.readme:
-        from .readme import write_readme
+        from .readme import write_details, write_readme
+        (config.ROOT / "docs").mkdir(exist_ok=True)
+        write_details(res, config.ROOT / "docs" / "DETAILS.md")
         write_readme(res, config.ROOT / "README.md")
-        print("      README.md regenerated from results")
+        print("      README.md and docs/DETAILS.md regenerated from results")
     print(f"      Share price            ${res['price']:.2f} ({res['valuation_date']})")
     print(f"      DCF (Gordon growth)    ${res['implied_price_gordon']:.2f} "
           f"({res['upside_gordon']:+.1%})")
@@ -90,7 +92,7 @@ def main(argv=None) -> int:
     r.add_argument("--peers", help="comma-separated peer tickers for trading comps")
     r.add_argument("--refresh", action="store_true", help="re-download all source data")
     r.add_argument("--terminal-growth", type=float, default=config.TERMINAL_GROWTH)
-    r.add_argument("--readme", action="store_true", help="regenerate README.md")
+    r.add_argument("--readme", action="store_true", help="regenerate README.md and docs/DETAILS.md")
     a = p.parse_args(argv)
     return run(a)
 
