@@ -60,8 +60,8 @@ def write_details(r: dict, path) -> None:
       f"price. To justify {usd(price)} with everything else unchanged, the WACC would have to be "
       f"{be_txt('wacc')} (model: {pct(r['wacc'])}) or the EBIT margin {be_txt('ebit_margin')} "
       f"(model: {pct(a['ebit_margin'])}).\n")
-    L(f"![Football field: {t} valuation ranges vs share price](figures/{t}_football_field.png)\n")
-    L(f"The Excel model is in [`outputs/{t}_dcf.xlsx`](outputs/{t}_dcf.xlsx). Every calculated "
+    L(f"![Football field: {t} valuation ranges vs share price](../figures/{t}_football_field.png)\n")
+    L(f"The Excel model is in [`outputs/{t}_dcf.xlsx`](../outputs/{t}_dcf.xlsx). Every calculated "
       f"cell is a live formula (inputs in blue, formulas in black), so a reviewer can trace any "
       f"number back to its source or change an input and watch the value move. The workbook "
       f"was recalculated independently (pycel) during the run and matched the Python model "
@@ -195,7 +195,7 @@ def write_details(r: dict, path) -> None:
       f"on P/E: {', '.join(x['ticker'] for x in r['peers'] if x['pe'] > tm['pe']) or 'none'}.\n")
 
     L("## What drives the value\n")
-    L(f"![WACC x terminal growth sensitivity](figures/{t}_sensitivity.png)\n")
+    L(f"![WACC x terminal growth sensitivity](../figures/{t}_sensitivity.png)\n")
     L("One input moved at a time, full model re-run (value per share):\n")
     L("| Driver | Lower input | Higher input | Swing |")
     L("|---|---:|---:|---:|")

@@ -4,9 +4,9 @@
 
 **Answer from this model:** a five-year unlevered DCF puts intrinsic value at **$105.54 per share** with a Gordon-growth terminal value and **$106.09** with a peer exit multiple, 24.7% and 24.3% below the market price. To justify $140.20 with everything else unchanged, the WACC would have to be 5.88% (model: 7.03%) or the EBIT margin 14.51% (model: 11.26%).
 
-![Football field: TJX valuation ranges vs share price](figures/TJX_football_field.png)
+![Football field: TJX valuation ranges vs share price](../figures/TJX_football_field.png)
 
-The Excel model is in [`outputs/TJX_dcf.xlsx`](outputs/TJX_dcf.xlsx). Every calculated cell is a live formula (inputs in blue, formulas in black), so a reviewer can trace any number back to its source or change an input and watch the value move. The workbook was recalculated independently (pycel) during the run and matched the Python model to better than $0.000001 per share.
+The Excel model is in [`outputs/TJX_dcf.xlsx`](../outputs/TJX_dcf.xlsx). Every calculated cell is a live formula (inputs in blue, formulas in black), so a reviewer can trace any number back to its source or change an input and watch the value move. The workbook was recalculated independently (pycel) during the run and matched the Python model to better than $0.000001 per share.
 
 ## Data
 
@@ -101,7 +101,7 @@ Applying the peer medians to TJX's own EBITDA and EPS gives $98.22 (EV/EBITDA) a
 
 ## What drives the value
 
-![WACC x terminal growth sensitivity](figures/TJX_sensitivity.png)
+![WACC x terminal growth sensitivity](../figures/TJX_sensitivity.png)
 
 One input moved at a time, full model re-run (value per share):
 
