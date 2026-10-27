@@ -1,0 +1,9 @@
+pandas==3.1.0
+numpy==2.5.4
+openpyxl==3.1.5
+matplotlib==3.11.2
+requests==2.34.2
+python-dateutil==3.0.0
+yfinance==1.7.0
+pycel==1.0b30
+pytest==9.2.0

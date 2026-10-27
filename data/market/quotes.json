@@ -1,0 +1,32 @@
+{
+  "BURL": {
+    "date": "2026-10-27",
+    "price": 235.15,
+    "source": "Yahoo Finance daily close via yfinance"
+  },
+  "DG": {
+    "date": "2026-10-27",
+    "price": 126.86,
+    "source": "Yahoo Finance daily close via yfinance"
+  },
+  "OLLI": {
+    "date": "2026-10-27",
+    "price": 84.72,
+    "source": "Yahoo Finance daily close via yfinance"
+  },
+  "ROST": {
+    "date": "2026-10-27",
+    "price": 230.09,
+    "source": "Yahoo Finance daily close via yfinance"
+  },
+  "TGT": {
+    "date": "2026-10-27",
+    "price": 148.01,
+    "source": "Yahoo Finance daily close via yfinance"
+  },
+  "TJX": {
+    "date": "2026-10-27",
+    "price": 140.2,
+    "source": "Yahoo Finance daily close via yfinance"
+  }
+}

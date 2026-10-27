@@ -1,0 +1,12 @@
+[project]
+name = "boston-dcf-valuation"
+version = "1.0.0"
+description = "Automated DCF valuation from SEC EDGAR filings, exported to an auditable Excel model"
+authors = [{ name = "Teymur Eyvazov" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]

@@ -1,0 +1,768 @@
+{
+  "ticker": "TJX",
+  "company": "The TJX Companies, Inc.",
+  "cik": "0000109198",
+  "valuation_date": "2026-10-27",
+  "price": 140.2,
+  "price_source": "Yahoo Finance daily close via yfinance",
+  "implied_price_gordon": 105.53538447099089,
+  "implied_price_exit": 106.08873961856965,
+  "upside_gordon": -0.24725118066340301,
+  "upside_exit": -0.2433042823211865,
+  "wacc": 0.07031643290445683,
+  "cost_of_equity": 0.07087058954574199,
+  "beta": 0.5640699877227565,
+  "beta_observations": 60,
+  "beta_first_month": "2021-10-01",
+  "beta_last_month": "2026-09-01",
+  "risk_free": {
+    "rate": 0.05,
+    "date": "2026-10-26",
+    "source": "FRED series DGS10 (10-Year Treasury Constant Maturity)"
+  },
+  "erp": {
+    "erp": 0.037,
+    "date": "2026-10-01",
+    "source": "Damodaran (NYU Stern), implied ERP for the S&P 500, monthly update (ERPbymonth.xlsx, 'Last 12 months data')"
+  },
+  "coverage": 90.92405063291139,
+  "rating": "Aaa/AAA",
+  "spread": 0.004,
+  "ratings_as_of": "January 2026",
+  "pre_tax_cost_of_debt": 0.054000000000000006,
+  "after_tax_cost_of_debt": 0.04054979342466946,
+  "weights": {
+    "equity": 0.9817235458108554,
+    "debt": 0.01827645418914463,
+    "equity_value": 154216363352.19998,
+    "debt_value": 2871000000.0
+  },
+  "assumptions": {
+    "base_revenue": 60372000000.0,
+    "growth_year1": 0.06530493123671799,
+    "terminal_growth": 0.025,
+    "ebit_margin": 0.11260296357863424,
+    "tax_rate": 0.24907789954315832,
+    "da_pct": 0.01934134405863411,
+    "capex_pct": 0.03273605763609721,
+    "nwc_pct": -0.030200275151309835,
+    "wacc": 0.07031643290445683,
+    "exit_multiple": 12.444933055050672,
+    "debt": 2871000000.0,
+    "cash": 6004000000.0,
+    "noncontrolling_interest": 0.0,
+    "shares": 1099974061.0,
+    "valuation_date": "2026-10-27",
+    "last_fiscal_year_end": "2026-01-31",
+    "years": 5
+  },
+  "year1_growth_raw": 0.06530493123671799,
+  "averages": {
+    "ebit_margin": 0.11260296357863424,
+    "tax_rate": 0.24907789954315832,
+    "da_pct": 0.01934134405863411,
+    "capex_pct": 0.03273605763609721,
+    "nwc_pct": -0.030200275151309835
+  },
+  "averaging_years": [
+    2024,
+    2025,
+    2026
+  ],
+  "history": {
+    "2021": {
+      "revenue": 32137000000.0,
+      "cogs": 24534000000.0,
+      "sga": 7021000000.0,
+      "operating_income": 0.0,
+      "pretax_income": 89000000.0,
+      "income_tax": -1000000.0,
+      "interest_expense": 199000000.0,
+      "interest_income": 13000000.0,
+      "da": 871000000.0,
+      "capex": 568000000.0,
+      "net_income": 90000000.0,
+      "eps_diluted": 0.07,
+      "diluted_shares": 1215000000.0,
+      "cfo": 4562000000.0,
+      "current_assets": 15739337000.0,
+      "current_liabilities": 10803668000.0,
+      "cash": 10469570000.0,
+      "st_investments": 0.0,
+      "debt_current": 749684000.0,
+      "st_borrowings": 0.0,
+      "debt_noncurrent": 5332921000.0,
+      "lease_liab_current": 1677605000.0,
+      "lease_liab_total": 9420821000.0,
+      "noncontrolling_interest": 0.0,
+      "ebit": 275000000.0
+    },
+    "2022": {
+      "revenue": 48550000000.0,
+      "cogs": 34714000000.0,
+      "sga": 9081000000.0,
+      "operating_income": 0.0,
+      "pretax_income": 4398000000.0,
+      "income_tax": 1115000000.0,
+      "interest_expense": 123000000.0,
+      "interest_income": 4000000.0,
+      "da": 868000000.0,
+      "capex": 1045000000.0,
+      "net_income": 3283000000.0,
+      "eps_diluted": 2.7,
+      "diluted_shares": 1216000000.0,
+      "cfo": 3057000000.0,
+      "current_assets": 13259000000.0,
+      "current_liabilities": 10468000000.0,
+      "cash": 6227000000.0,
+      "st_investments": 0.0,
+      "debt_current": 0.0,
+      "st_borrowings": 0.0,
+      "debt_noncurrent": 3355000000.0,
+      "lease_liab_current": 1577000000.0,
+      "lease_liab_total": 9152151000.0,
+      "noncontrolling_interest": 0.0,
+      "ebit": 4517000000.0
+    },
+    "2023": {
+      "revenue": 49936000000.0,
+      "cogs": 36149000000.0,
+      "sga": 8927000000.0,
+      "operating_income": 0.0,
+      "pretax_income": 4636000000.0,
+      "income_tax": 1138000000.0,
+      "interest_expense": 91000000.0,
+      "interest_income": 78000000.0,
+      "da": 887000000.0,
+      "capex": 1457000000.0,
+      "net_income": 3498000000.0,
+      "eps_diluted": 2.97,
+      "diluted_shares": 1178000000.0,
+      "cfo": 4084000000.0,
+      "current_assets": 12456000000.0,
+      "current_liabilities": 10305000000.0,
+      "cash": 5477000000.0,
+      "st_investments": 0.0,
+      "debt_current": 500000000.0,
+      "st_borrowings": 0.0,
+      "debt_noncurrent": 2859000000.0,
+      "lease_liab_current": 1610000000.0,
+      "lease_liab_total": 9385000000.0,
+      "noncontrolling_interest": 0.0,
+      "ebit": 4649000000.0
+    },
+    "2024": {
+      "revenue": 54217000000.0,
+      "cogs": 37951000000.0,
+      "sga": 10469000000.0,
+      "operating_income": 0.0,
+      "pretax_income": 5967000000.0,
+      "income_tax": 1493000000.0,
+      "interest_expense": 82000000.0,
+      "interest_income": 249000000.0,
+      "da": 964000000.0,
+      "capex": 1722000000.0,
+      "net_income": 4474000000.0,
+      "eps_diluted": 3.86,
+      "diluted_shares": 1159000000.0,
+      "cfo": 6057000000.0,
+      "current_assets": 12664000000.0,
+      "current_liabilities": 10451000000.0,
+      "cash": 5600000000.0,
+      "st_investments": 0.0,
+      "debt_current": 0.0,
+      "st_borrowings": 0.0,
+      "debt_noncurrent": 2862000000.0,
+      "lease_liab_current": 1620000000.0,
+      "lease_liab_total": 9680000000.0,
+      "noncontrolling_interest": 0.0,
+      "ebit": 5800000000.0
+    },
+    "2025": {
+      "revenue": 56360000000.0,
+      "cogs": 39112000000.0,
+      "sga": 10946000000.0,
+      "operating_income": 0.0,
+      "pretax_income": 6483000000.0,
+      "income_tax": 1619000000.0,
+      "interest_expense": 78000000.0,
+      "interest_income": 257000000.0,
+      "da": 1104000000.0,
+      "capex": 1918000000.0,
+      "net_income": 4864000000.0,
+      "eps_diluted": 4.26,
+      "diluted_shares": 1142000000.0,
+      "cfo": 6116000000.0,
+      "current_assets": 12991000000.0,
+      "current_liabilities": 11008000000.0,
+      "cash": 5335000000.0,
+      "st_investments": 0.0,
+      "debt_current": 0.0,
+      "st_borrowings": 0.0,
+      "debt_noncurrent": 2866000000.0,
+      "lease_liab_current": 1636000000.0,
+      "lease_liab_total": 9912000000.0,
+      "noncontrolling_interest": 0.0,
+      "ebit": 6304000000.0
+    },
+    "2026": {
+      "revenue": 60372000000.0,
+      "cogs": 41679000000.0,
+      "sga": 11515000000.0,
+      "operating_income": 0.0,
+      "pretax_income": 7299000000.0,
+      "income_tax": 1805000000.0,
+      "interest_expense": 79000000.0,
+      "interest_income": 195000000.0,
+      "da": 1247000000.0,
+      "capex": 1957000000.0,
+      "net_income": 5494000000.0,
+      "eps_diluted": 4.87,
+      "diluted_shares": 1128000000.0,
+      "cfo": 6874000000.0,
+      "current_assets": 15202000000.0,
+      "current_liabilities": 13361000000.0,
+      "cash": 6230000000.0,
+      "st_investments": 0.0,
+      "debt_current": 999000000.0,
+      "st_borrowings": 0.0,
+      "debt_noncurrent": 1870000000.0,
+      "lease_liab_current": 1726000000.0,
+      "lease_liab_total": 10620000000.0,
+      "noncontrolling_interest": 0.0,
+      "ebit": 7183000000.0
+    }
+  },
+  "ratios": {
+    "2021": {
+      "revenue_growth": null,
+      "ebit_margin": 0.008557114852039705,
+      "tax_rate": -0.011235955056179775,
+      "da_pct": 0.027102716495005758,
+      "capex_pct": 0.01767433176712201,
+      "nwc": -3106612000.0,
+      "nwc_pct": -0.0966677661262719
+    },
+    "2022": {
+      "revenue_growth": 0.5107197311510097,
+      "ebit_margin": 0.09303810504634398,
+      "tax_rate": 0.2535243292405639,
+      "da_pct": 0.01787847579814624,
+      "capex_pct": 0.02152420185375901,
+      "nwc": -1859000000.0,
+      "nwc_pct": -0.03829042224510813
+    },
+    "2023": {
+      "revenue_growth": 0.02854788877445924,
+      "ebit_margin": 0.0930991669336751,
+      "tax_rate": 0.2454702329594478,
+      "da_pct": 0.017762736302467157,
+      "capex_pct": 0.02917734700416533,
+      "nwc": -1216000000.0,
+      "nwc_pct": -0.024351169496956104
+    },
+    "2024": {
+      "revenue_growth": 0.08572973405959639,
+      "ebit_margin": 0.10697751627718244,
+      "tax_rate": 0.25020948550360317,
+      "da_pct": 0.017780400981242044,
+      "capex_pct": 0.0317612556947083,
+      "nwc": -1767000000.0,
+      "nwc_pct": -0.032591253665824375
+    },
+    "2025": {
+      "revenue_growth": 0.039526347824483166,
+      "ebit_margin": 0.11185237757274663,
+      "tax_rate": 0.24973006324232608,
+      "da_pct": 0.01958836053938964,
+      "capex_pct": 0.03403122782114975,
+      "nwc": -1716000000.0,
+      "nwc_pct": -0.030447125621007806
+    },
+    "2026": {
+      "revenue_growth": 0.07118523775727459,
+      "ebit_margin": 0.11897899688597363,
+      "tax_rate": 0.2472941498835457,
+      "da_pct": 0.020655270655270654,
+      "capex_pct": 0.032415689392433576,
+      "nwc": -1664000000.0,
+      "nwc_pct": -0.02756244616709733
+    }
+  },
+  "sources": {
+    "revenue": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "cogs": "CostOfGoodsAndServicesSold",
+    "sga": "SellingGeneralAndAdministrativeExpense",
+    "pretax_income": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+    "income_tax": "IncomeTaxExpenseBenefit",
+    "interest_expense": "InterestExpense",
+    "interest_income": "InvestmentIncomeInterest",
+    "da": "DepreciationDepletionAndAmortization",
+    "capex": "PaymentsToAcquirePropertyPlantAndEquipment",
+    "net_income": "NetIncomeLoss",
+    "eps_diluted": "EarningsPerShareDiluted",
+    "diluted_shares": "WeightedAverageNumberOfDilutedSharesOutstanding",
+    "cfo": "NetCashProvidedByUsedInOperatingActivities",
+    "current_assets": "AssetsCurrent",
+    "current_liabilities": "LiabilitiesCurrent",
+    "cash": "CashAndCashEquivalentsAtCarryingValue",
+    "debt_current": "LongTermDebtCurrent",
+    "debt_noncurrent": "LongTermDebtNoncurrent",
+    "lease_liab_current": "OperatingLeaseLiabilityCurrent",
+    "lease_liab_total": "OperatingLeaseLiability",
+    "ebit": "pre-tax income + interest expense - interest income"
+  },
+  "balance_sheet": {
+    "as_of": "2026-08-01",
+    "cash": 6004000000.0,
+    "st_investments": 0.0,
+    "debt": 2871000000.0,
+    "noncontrolling_interest": 0.0,
+    "components": {
+      "cash": {
+        "value": 6004000000.0,
+        "tag": "CashAndCashEquivalentsAtCarryingValue"
+      },
+      "st_investments": {
+        "value": 0.0,
+        "tag": null
+      },
+      "debt_current": {
+        "value": 1000000000.0,
+        "tag": "LongTermDebtCurrent"
+      },
+      "st_borrowings": {
+        "value": 0.0,
+        "tag": null
+      },
+      "debt_noncurrent": {
+        "value": 1871000000.0,
+        "tag": "LongTermDebtNoncurrent"
+      },
+      "noncontrolling_interest": {
+        "value": 0.0,
+        "tag": null
+      }
+    }
+  },
+  "shares": 1099974061.0,
+  "shares_date": "2026-08-21",
+  "projection": {
+    "fiscal_year_ends": [
+      "2027-01-31",
+      "2028-01-31",
+      "2029-01-31",
+      "2030-01-31",
+      "2031-01-31"
+    ],
+    "growth": [
+      0.06530493123671799,
+      0.05724394498937439,
+      0.0491829587420308,
+      0.0411219724946872,
+      0.0330609862473436
+    ],
+    "revenue": [
+      64314589308.62314,
+      67996210121.02017,
+      71340464918.01675,
+      74274125554.13364,
+      76729701397.61232
+    ],
+    "ebit": [
+      7242013357.4937105,
+      7656574771.742395,
+      8033147772.846274,
+      8363486654.607017,
+      8639991771.87482
+    ],
+    "nopat": [
+      5438187881.945682,
+      5749491209.901663,
+      6032268198.865924,
+      6280326965.820265,
+      6487960769.26607
+    ],
+    "da": [
+      1243930599.807831,
+      1315138094.63383,
+      1379820477.2822785,
+      1436561416.9966867,
+      1484055554.2474785
+    ],
+    "capex": [
+      2105406102.4490085,
+      2225927853.557893,
+      2335405571.3421674,
+      2431442055.0108395,
+      2511827927.3527656
+    ],
+    "delta_nwc": [
+      -119067281.9290312,
+      -111185961.53717926,
+      -100997415.04538459,
+      -88597358.41129649,
+      -74159066.12796597
+    ],
+    "ebitda": [
+      8485943957.301541,
+      8971712866.376225,
+      9412968250.128553,
+      9800048071.603703,
+      10124047326.1223
+    ],
+    "fcf": [
+      4695779661.233536,
+      4949887412.514779,
+      5177680519.85142,
+      5374043686.217409,
+      5534347462.28875
+    ],
+    "fractions": [
+      0.26301369863013696,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "periods": [
+      0.13150684931506848,
+      0.763013698630137,
+      1.7630136986301368,
+      2.763013698630137,
+      3.763013698630137
+    ],
+    "terminal_period": 4.263013698630137,
+    "discount_factors": [
+      0.9911033508026945,
+      0.9494711917948156,
+      0.8870939122351786,
+      0.8288146243143464,
+      0.7743641028338127
+    ],
+    "pv_fcf": [
+      1224066531.1245234,
+      4699775500.810564,
+      4593088868.65887,
+      4454085998.841167,
+      4285600007.405816
+    ]
+  },
+  "valuation": {
+    "sum_pv_fcf": 19256616906.840942,
+    "tv_gordon": 125179891383.0233,
+    "tv_exit": 125993091219.75677,
+    "pv_tv_gordon": 93696568528.91124,
+    "pv_tv_exit": 94305244837.7687,
+    "ev_gordon": 112953185435.75218,
+    "ev_exit": 113561861744.60965,
+    "equity_gordon": 116086185435.75218,
+    "equity_exit": 116694861744.60965,
+    "tv_share_of_ev_gordon": 0.8295168318400891,
+    "implied_exit_multiple": 12.36460946404619,
+    "implied_growth_from_exit": 0.02528017968120198
+  },
+  "exit_multiple": 12.444933055050672,
+  "sensitivity": {
+    "waccs": [
+      0.060316432904456825,
+      0.06531643290445682,
+      0.07031643290445683,
+      0.07531643290445683,
+      0.08031643290445682
+    ],
+    "growths": [
+      0.015000000000000001,
+      0.02,
+      0.025,
+      0.030000000000000002,
+      0.035
+    ],
+    "grid": [
+      [
+        108.49643917566962,
+        119.87061155890824,
+        134.46542981371877,
+        153.8744088574343,
+        180.949941525416
+      ],
+      [
+        98.02666871924241,
+        107.00147920270169,
+        118.20238208494236,
+        132.5748688336916,
+        151.68817941024557
+      ],
+      [
+        89.45577846536911,
+        96.69665728588778,
+        105.53538447099089,
+        116.56645025064414,
+        130.72100979012757
+      ],
+      [
+        82.31131122208735,
+        88.26054237549755,
+        95.39213698553567,
+        104.09746415856571,
+        114.96204167838613
+      ],
+      [
+        76.26548543717504,
+        81.22819156957844,
+        87.08804631982113,
+        94.1125016611609,
+        102.68704708927997
+      ]
+    ],
+    "multiples": [
+      10.444933055050672,
+      11.444933055050672,
+      12.444933055050672,
+      13.444933055050672,
+      14.444933055050672
+    ],
+    "exit_grid": [
+      [
+        95.59666354533712,
+        102.76700555360806,
+        109.93734756187904,
+        117.10768957015,
+        124.27803157842094
+      ],
+      [
+        93.93394226673011,
+        100.96191329714671,
+        107.9898843275633,
+        115.01785535797988,
+        122.04582638839648
+      ],
+      [
+        92.31059198700068,
+        99.19966580278516,
+        106.08873961856965,
+        112.97781343435416,
+        119.86688725013865
+      ],
+      [
+        90.725492105644,
+        97.47904207398298,
+        104.23259204232197,
+        110.98614201066096,
+        117.73969197899996
+      ],
+      [
+        89.17755905583275,
+        95.79886149725733,
+        102.42016393868194,
+        109.0414663801065,
+        115.6627688215311
+      ]
+    ]
+  },
+  "tornado": [
+    {
+      "driver": "WACC +/- 1.0 pt",
+      "field": "wacc",
+      "step": 0.01,
+      "low_input_price": 134.46542981371877,
+      "high_input_price": 87.08804631982113,
+      "swing": 47.37738349389764,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "Beta +/- 0.2",
+      "field": "wacc",
+      "step": 0.007264754239000331,
+      "low_input_price": 125.03813629682645,
+      "high_input_price": 91.43442914120246,
+      "swing": 33.603707155623994,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "Terminal growth +/- 0.5 pt",
+      "field": "terminal_growth",
+      "step": 0.005,
+      "low_input_price": 95.75478129298219,
+      "high_input_price": 117.73793371824567,
+      "swing": 21.983152425263484,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "EBIT margin +/- 1.0 pt",
+      "field": "ebit_margin",
+      "step": 0.01,
+      "low_input_price": 94.85413796280663,
+      "high_input_price": 116.21663097917511,
+      "swing": 21.362493016368475,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "Capex % of revenue +/- 0.5 pt",
+      "field": "capex_pct",
+      "step": 0.005,
+      "low_input_price": 112.64747139830732,
+      "high_input_price": 98.42329754367444,
+      "swing": 14.22417385463288,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "Equity risk premium +/- 0.5 pt",
+      "field": "wacc",
+      "step": 0.0027688039421633515,
+      "low_input_price": 112.18109354907222,
+      "high_input_price": 99.65702655063136,
+      "swing": 12.524066998440858,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "Year-1 revenue growth +/- 2.0 pts",
+      "field": "growth_year1",
+      "step": 0.02,
+      "low_input_price": 99.8174130692602,
+      "high_input_price": 111.5062287298371,
+      "swing": 11.688815660576907,
+      "base": 105.53538447099089
+    },
+    {
+      "driver": "Tax rate +/- 2.0 pts",
+      "field": "tax_rate",
+      "step": 0.02,
+      "low_input_price": 108.73875273196963,
+      "high_input_price": 102.33201621001209,
+      "swing": 6.406736521957541,
+      "base": 105.53538447099089
+    }
+  ],
+  "peers": [
+    {
+      "ticker": "ROST",
+      "name": "ROSS STORES, INC.",
+      "price": 230.09,
+      "price_date": "2026-10-27",
+      "shares": 319453110.0,
+      "debt": 1018512000.0,
+      "cash": 4288124000.0,
+      "noncontrolling_interest": 0.0,
+      "ebitda": 3216748000.0,
+      "eps": 6.61,
+      "fiscal_year": 2026,
+      "bs_date": "2026-08-01",
+      "market_cap": 73502966079.9,
+      "ev": 70233354079.9,
+      "ev_ebitda": 21.833651277594637,
+      "pe": 34.809379727685325
+    },
+    {
+      "ticker": "BURL",
+      "name": "Burlington Stores, Inc.",
+      "price": 235.15,
+      "price_date": "2026-10-27",
+      "shares": 62815195.0,
+      "debt": 1913555000.0,
+      "cash": 703686000.0,
+      "noncontrolling_interest": 0.0,
+      "ebitda": 1284126000.0,
+      "eps": 9.51,
+      "fiscal_year": 2026,
+      "bs_date": "2026-08-01",
+      "market_cap": 14770993104.25,
+      "ev": 15980862104.25,
+      "ev_ebitda": 12.444933055050672,
+      "pe": 24.72660357518402
+    },
+    {
+      "ticker": "OLLI",
+      "name": "Ollie's Bargain Outlet Holdings, Inc.",
+      "price": 84.72,
+      "price_date": "2026-10-27",
+      "shares": 59402403.0,
+      "debt": 2229000.0,
+      "cash": 120765000.0,
+      "noncontrolling_interest": 0.0,
+      "ebitda": 352865000.0,
+      "eps": 3.89,
+      "fiscal_year": 2026,
+      "bs_date": "2026-08-01",
+      "market_cap": 5032571582.16,
+      "ev": 4914035582.16,
+      "ev_ebitda": 13.926106534113613,
+      "pe": 21.77892030848329
+    },
+    {
+      "ticker": "TGT",
+      "name": "TARGET CORP",
+      "price": 148.01,
+      "price_date": "2026-10-27",
+      "shares": 454296736.0,
+      "debt": 15357000000.0,
+      "cash": 5411000000.0,
+      "noncontrolling_interest": 0.0,
+      "ebitda": 8251000000.0,
+      "eps": 8.13,
+      "fiscal_year": 2026,
+      "bs_date": "2026-08-01",
+      "market_cap": 67240459895.35999,
+      "ev": 77186459895.35999,
+      "ev_ebitda": 9.354800617544539,
+      "pe": 18.20541205412054
+    },
+    {
+      "ticker": "DG",
+      "name": "DOLLAR GENERAL CORP",
+      "price": 126.86,
+      "price_date": "2026-10-27",
+      "shares": 220616790.0,
+      "debt": 4570815000.0,
+      "cash": 1589590000.0,
+      "noncontrolling_interest": 0.0,
+      "ebitda": 3249986000.0,
+      "eps": 6.85,
+      "fiscal_year": 2026,
+      "bs_date": "2026-07-31",
+      "market_cap": 27987445979.4,
+      "ev": 30968670979.4,
+      "ev_ebitda": 9.528862887224745,
+      "pe": 18.51970802919708
+    }
+  ],
+  "target_multiples": {
+    "ev_ebitda": 17.92210715921708,
+    "pe": 28.788501026694043,
+    "ebitda": 8430000000.0,
+    "eps": 4.87
+  },
+  "comps_implied": {
+    "ev_ebitda": {
+      "min": 74.54172976711718,
+      "median": 98.22393953167698,
+      "max": 170.177358636935
+    },
+    "pe": {
+      "min": 88.66035670356703,
+      "median": 106.06334190231362,
+      "max": 169.52167927382754
+    }
+  },
+  "week52": {
+    "low": 122.83999633789062,
+    "high": 168.41000366210938
+  },
+  "break_even_to_market_price": {
+    "wacc": 0.058837204480710614,
+    "ebit_margin": 0.14505668094443533,
+    "terminal_growth": 0.03680798356928905,
+    "growth_year1": 0.17115493890232758
+  },
+  "notes": [
+    "The company does not tag an operating-income line for some years; EBIT is rebuilt as pre-tax income + interest expense - interest income."
+  ],
+  "workbook_check": {
+    "excel_price_gordon": 105.53538447099076,
+    "excel_price_exit": 106.08873961856965,
+    "excel_wacc": 0.07031643290445688,
+    "excel_beta": 0.5640699877227577,
+    "abs_diff_gordon": 1.2789769243681803e-13,
+    "abs_diff_exit": 0.0
+  }
+}
